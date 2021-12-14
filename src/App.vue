@@ -1,6 +1,6 @@
 <template>
 <!-- Form Handling -->
- <form @submit="submitForm">
+ <form @submit.prevent="submitForm">
    <div>
      <pre>
        {{JSON.stringify(formValues, null , 2)}}
@@ -8,11 +8,11 @@
    </div>
    <div>
      <label for="name">Name</label>
-     <input type="text" id="name" v-model="formValues.name">
+     <input type="text" id="name" v-model.trim.lazy="formValues.name">
    </div>
    <div>
      <label for="profile">Profile Summary</label>
-     <textarea id="profile" v-model="formValues.profileSummary"></textarea>
+     <textarea id="profile" v-model.trim.lazy="formValues.profileSummary"></textarea>
    </div>
    <div>
      <label for="country">Country</label>
@@ -57,6 +57,10 @@
      <label for="10+">10+</label>
    </div>
    <div>
+    <label for="age">Age</label>
+     <input @keyup.enter="submitForm" type="number" id="age" v-model.number="formValues.age">
+   </div>
+   <div>
      <button>Submit</button>
    </div>
  </form>
@@ -75,13 +79,13 @@ export default {
         jobLocation: [],
         remoteWork: 'no',
         skillSet: [],
-        yearsOfExperience: ''
+        yearsOfExperience: '',
+        age: null
       }
     }
   },
   methods: {
-    submitForm(event){
-      event.preventDefault()
+    submitForm(){
       console.log('Form values', this.formValues)
     }
   }
