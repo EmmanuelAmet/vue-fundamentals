@@ -1,15 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<!-- Form Handling -->
+ <form action="">
+   <div>
+     <pre>
+       {{JSON.stringify(formValues, null , 2)}}
+     </pre>
+   </div>
+   <div>
+     <label for="name">Name</label>
+     <input type="text" id="name" v-model="formValues.name">
+   </div>
+ </form>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name: 'App', 
+  data () {
+    return{
+      formValues: {
+        name: ''
+      }
+    }
+  },
+  methods: {
+  
   }
 }
 </script>
@@ -19,8 +35,35 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
   margin-top: 60px;
 }
+
+label {
+  font-weight: bold;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+input + label {
+  font-weight: bold;
+  display: inline-flex;
+  margin-bottom: 20px;
+}
+
+input[type='text'],
+textarea,
+select {
+  display: block;
+  width: 400px;
+  font-size: 14px;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+
+}
+
 </style>
