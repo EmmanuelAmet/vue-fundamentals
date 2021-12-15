@@ -1,18 +1,4 @@
 <template>
-<!-- Directives -->
-<h2>
-  Fullname: {{firstName }} {{lastName}}
-</h2>
-<h2>computed Fullname: {{fullName}}</h2>
-<button @click="changeFullName">change fullname</button>
-<button @click="items.push({id: 4, title: 'Keyboard', price: 500 })">Add item</button>
-<h2>Computed Total: {{total}}</h2>
-<h2>Method Total: {{getTotal()}}</h2>
-
-<h2 v-for="item in expensiveItems" :key="item.id">
-  {{item.title}} {{item.price}}
-</h2>
-
 
 </template>
 
@@ -21,53 +7,18 @@
 export default {
   name: 'App', 
   data () {
-    return{
-      firstName: 'Manuel',
-      lastName: 'Emmanuel',
-      items: [
-        {
-          id: 1,
-          title: 'TV',
-          price: 100
-        },
-        {
-          id: 2,
-          title: 'Phone',
-          price: 200
-        },
-        {
-          id: 3,
-          title: 'Laptop',
-          price: 300
-        }
-      ]
+    return {
+
     }
   },
   methods: {
-    getTotal(){
-      return this.items.reduce((total, curr) => (total = total + curr.price), 0)
-    },
-    changeFullName() {
-      this.fullName = 'Eric Jones'
-    }
+    
   },
   computed: { 
-    fullName: {
-      get() {
-              return `${this.firstName} ${this.lastName}`
-      },
-      set(value) {
-        const names = value.split(' ')
-        this.firstName = names[0]
-        this.lastName = names[1]
-      }
-    },
-    total(){
-      return this.items.reduce((total, curr) => (total = total + curr.price), 0)
-    },
-    expensiveItems(){
-      return this.items.filter(item => item.price > 100)
-    }
+    
+  },
+  watch: {
+    
   }
 }
 </script>
