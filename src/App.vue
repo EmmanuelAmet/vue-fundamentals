@@ -1,70 +1,38 @@
 <template>
-  <!-- <Card></Card>
-  <Card>
-    Card Content
-  </Card>
-  <Card>
-    <h2>Card Content</h2>
-  </Card>
-  <Card> 
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ0Bvcb06LNaFVCrVUi9uejRCbPDe1xDFafwZ2k-nQqKPsoiPodBce8YajqYgX3S-kEbg&usqp=CAU" alt="">
-  </Card>
-
-  <Card>
-    <template v-slot:header>
-      <h3>Herder</h3>
-    </template>
-    <template v-slot:default>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ0Bvcb06LNaFVCrVUi9uejRCbPDe1xDFafwZ2k-nQqKPsoiPodBce8YajqYgX3S-kEbg&usqp=CAU" alt="">
-    </template>
-    <template v-slot:footer>
-      <button>View Details</button>
-    </template>
-  </Card> -->
-
-  <NameList>
-    <template v-slot:default="slotProps">
-      {{slotProps.firstName}}
-    </template>
-  </NameList>
-  <NameList>
-    <template v-slot:default="slotProps">
-      {{slotProps.firstName}}, {{slotProps.lastName}}
-    </template>
-  </NameList>
-  <NameList>
-    <template v-slot:default="slotProps">
-      {{slotProps.firstName}} {{slotProps.lastName}}
-    </template>
-  </NameList>
+  <h4>App Component Text</h4>
+  <ChildStyles>
+    <h4>Child Style</h4>
+  </ChildStyles>
 </template>
 
 <script>
-import NameList from './components/NameList.vue'
+import ChildStyles from './components/ChildStyles.vue'
 
 export default {
   name: 'App', 
   components: {
-    NameList,
+    ChildStyles,
   },
   data () {
     return {
-      name: '',
-      location: '',
+
     }
   },
   methods: {}
 }
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
+  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
 
+h4 {
+  color: orange;
+}
 </style>
