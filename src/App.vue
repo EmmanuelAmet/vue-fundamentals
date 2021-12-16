@@ -2,7 +2,7 @@
   <!-- <Greet name="Manuel" hero-name="Walls"/>
   <Greet name="Diana" hero-name="Flash"/>
   <Greet :name="name" :hero-name="channel"/> -->
-  <Article title="Title" :likes="38" :isPublished="true"/>
+  <Article id="my-article" title="Title" :likes="38" :isPublished="true"/>
 
 </template>
 
