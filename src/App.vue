@@ -1,5 +1,5 @@
 <template>
-  <Card></Card>
+  <!-- <Card></Card>
   <Card>
     Card Content
   </Card>
@@ -20,17 +20,32 @@
     <template v-slot:footer>
       <button>View Details</button>
     </template>
-  </Card>
+  </Card> -->
 
+  <NameList>
+    <template v-slot:default="slotProps">
+      {{slotProps.firstName}}
+    </template>
+  </NameList>
+  <NameList>
+    <template v-slot:default="slotProps">
+      {{slotProps.firstName}}, {{slotProps.lastName}}
+    </template>
+  </NameList>
+  <NameList>
+    <template v-slot:default="slotProps">
+      {{slotProps.firstName}} {{slotProps.lastName}}
+    </template>
+  </NameList>
 </template>
 
 <script>
-import Card from './components/Card.vue'
+import NameList from './components/NameList.vue'
 
 export default {
   name: 'App', 
   components: {
-    Card,
+    NameList,
   },
   data () {
     return {
