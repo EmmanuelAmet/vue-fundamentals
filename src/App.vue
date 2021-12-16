@@ -4,10 +4,13 @@
   <Greet :name="name" :hero-name="channel"/> -->
   <!-- <Article id="my-article" title="Title" :likes="38" :isPublished="true"/> -->
 
-  <h2>{{name}}</h2>
+  <!-- <h2>{{name}}</h2>
   <ComponentC/>
   <ComponentE />
-  <ComponentF />
+  <ComponentF /> -->
+
+  <button @click="showPopup = true">Show Popup</button>
+  <Popup v-show="showPopup" @close="closePopup"/>
 </template>
 
 <script>
@@ -17,6 +20,7 @@ import Article from './components/Article.vue'
 import ComponentC from './components/ComponentC.vue'
 import ComponentE from './components/ComponentE.vue'
 import ComponentF from './components/ComponentF.vue'
+import Popup from './components/Popup.vue'
 
 export default {
   name: 'App', 
@@ -26,11 +30,19 @@ export default {
     ComponentC,
     ComponentE,
     ComponentF,
+    Popup,
   },
   data () {
     return {
       name: 'ManuelAmet',
-      channel: 'CodeVolution'
+      channel: 'CodeManuel',
+      showPopup: false,
+    }
+  },
+  methods: {
+    closePopup(name){
+      this.showPopup = false
+      console.log('name', name)
     }
   },
   provide() {
