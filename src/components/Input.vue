@@ -21,6 +21,7 @@ input[type='text'] {
     font-size: 14px;
     line-height: 1.4;
     color: #555;
+    margin: 10px;
     background-color: #fff;
     background-image: none;
     border: 1px solid #ccc;
