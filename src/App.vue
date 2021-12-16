@@ -1,5 +1,6 @@
 <template>
   <Input v-model="name"/>
+  <Input v-model="location"/>
 </template>
 
 <script>
@@ -13,6 +14,7 @@ export default {
   data () {
     return {
       name: '',
+      location: '',
     }
   },
   methods: {}
