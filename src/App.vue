@@ -1,33 +1,19 @@
 <template>
-  <button @click="activeTab = 'TabA'">Tab A</button>
-  <button @click="activeTab = 'TabB'">Tab B</button>
-  <button @click="activeTab = 'TabC'">Tab C</button>
-
-<keep-alive>
-<component :is="activeTab" />
-</keep-alive>
-  <!-- <TabA v-if="activeTab === 'TabA'" />
-  <TabB v-if="activeTab === 'TabB'" />
-  <TabC v-if="activeTab === 'TabC'" /> -->
+  <teleport to="#portal-root">
+  <Portal />
+  </teleport>
 </template>
 
 <script>
-import ComponentC from './components/ComponentC.vue'
-import TabA from './components/Tabs/TabA.vue'
-import TabB from './components/Tabs/TabB.vue'
-import TabC from './components/Tabs/TabC.vue'
+import Portal from './components/Portal.vue'
 
 export default {
   name: 'App', 
   components: {
-    TabA,
-    TabB,
-    TabC,
-    ComponentC,
+    Portal,
   },
   data () {
     return {
-      activeTab: 'TabA'
     }
   },
   methods: {}

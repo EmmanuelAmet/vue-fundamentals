@@ -2,9 +2,7 @@
     <div>
         Tab C Content
     </div>
-    <keep-alive>
     <input type="text" v-model="name">
-    </keep-alive>
 </template>
 
 <script>
